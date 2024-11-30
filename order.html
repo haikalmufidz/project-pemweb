@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Coffee</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Pesan Kopi Anda</h1>
+            <p>Silakan isi formulir di bawah ini untuk memesan kopi favorit Anda.</p>
+            <nav>
+                <a href="profile.html">Profile</a>
+                <a href="menu.html">Menu</a>
+                <a href="order.html">Order</a>
+            </nav>
+        </div>
+    </header>
+    <div class="order-container">
+        <h2>Formulir Pemesanan</h2>
+        <form id="order-form">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="phone">Nomor HP:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="coffee">Pilih Kopi:</label>
+            <select id="coffee" name="coffee" required>
+                <option value="Kopi Arabika">Kopi Arabika</option>
+                <option value="Kopi Robusta">Kopi Robusta</option>
+                <option value="Kopi Latte">Kopi Latte</option>
+                <option value="Kopi Cappuccino">Kopi Cappuccino</option>
+                <option value="Kopi Espresso">Kopi Espresso</option>
+            </select>
+
+            <label for="quantity">Jumlah:</label>
+            <input type="number" id="quantity" name="quantity" required>
+
+            <label for="address">Alamat:</label>
+            <textarea id="address" name="address" required></textarea>
+
+            <button type="submit">Pesan</button>
+        </form>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 UMKM Coffee Shop. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://instagram.com" target="_blank">Instagram</a>
+                <a href="https://facebook.com" target="_blank">Facebook</a>
+                <a href="https://whatsapp.com" target="_blank">WhatsApp</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script>
+        document.getElementById("order-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // Mengambil data dari form
+            const customerName = document.getElementById("name").value;
+            const customerPhone = document.getElementById("phone").value;
+            const coffeeChoice = document.getElementById("coffee").value;
+            const coffeeQuantity = document.getElementById("quantity").value;
+            const customerAddress = document.getElementById("address").value;
+
+            // Menyimpan data ke Local Storage
+            localStorage.setItem("customerName", customerName);
+            localStorage.setItem("customerPhone", customerPhone);
+            localStorage.setItem("coffeeChoice", coffeeChoice);
+            localStorage.setItem("coffeeQuantity", coffeeQuantity);
+            localStorage.setItem("customerAddress", customerAddress);
+
+            // Redirect ke halaman Thank You
+            window.location.href = "thankyou.html";
+        });
+    </script>
+</body>
+</html>

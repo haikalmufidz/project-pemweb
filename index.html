@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - UMKM Coffee Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Selamat Datang di UMKM Coffee Shop</h1>
+            <p>Masuk untuk melanjutkan</p>
+        </div>
+    </header>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Masuk</button>
+        </form>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 UMKM Coffee Shop. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://instagram.com" target="_blank">Instagram</a>
+                <a href="https://facebook.com" target="_blank">Facebook</a>
+                <a href="https://whatsapp.com" target="_blank">WhatsApp</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simulasi login - Semua username dan password diterima
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah reload halaman
+
+            // Ambil data dari form
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Proses login tanpa memeriksa username atau password
+            alert("Login berhasil! Anda akan diarahkan ke halaman utama.");
+            window.location.href = "profile.html"; // Redirect ke halaman profile setelah login berhasil
+        });
+    </script>
+</body>
+</html>

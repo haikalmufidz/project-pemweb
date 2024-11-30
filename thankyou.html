@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <h1>Terima Kasih!</h1>
+            <p>Pesanan Anda telah kami terima. Berikut adalah detail pesanan Anda:</p>
+        </div>
+    </header>
+
+    <!-- Order Details -->
+    <div class="thankyou-container">
+        <h2>Detail Pesanan</h2>
+        <div class="order-summary">
+            <label>Nama:</label>
+            <p id="customer-name"></p>
+
+            <label>Nomor HP:</label>
+            <p id="customer-phone"></p>
+
+            <label>Pilihan Kopi:</label>
+            <p id="coffee-choice"></p>
+
+            <label>Jumlah:</label>
+            <p id="coffee-quantity"></p>
+
+            <label>Alamat:</label>
+            <p id="customer-address"></p>
+        </div>
+        <p>Kami akan segera memproses pesanan Anda dan menghubungi Anda untuk konfirmasi lebih lanjut. Terima kasih telah memilih UMKM Coffee Shop!</p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 UMKM Coffee Shop. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://instagram.com" target="_blank">Instagram</a>
+                <a href="https://facebook.com" target="_blank">Facebook</a>
+                <a href="https://whatsapp.com" target="_blank">WhatsApp</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script>
+        // Mengambil data dari Local Storage
+        document.getElementById("customer-name").textContent = localStorage.getItem("customerName") || "Tidak ada data";
+        document.getElementById("customer-phone").textContent = localStorage.getItem("customerPhone") || "Tidak ada data";
+        document.getElementById("coffee-choice").textContent = localStorage.getItem("coffeeChoice") || "Tidak ada data";
+        document.getElementById("coffee-quantity").textContent = localStorage.getItem("coffeeQuantity") || "Tidak ada data";
+        document.getElementById("customer-address").textContent = localStorage.getItem("customerAddress") || "Tidak ada data";
+    </script>
+</body>
+</html>
